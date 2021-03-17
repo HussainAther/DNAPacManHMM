@@ -1,6 +1,6 @@
 # DNAPACManHMM
 
-For this project, we’ll be modifying my DNA Pac-Man game (https://github.com/HussainAther/dnapacman)  to represent how language models (using Hi
+For this project, we’ll be modifying my DNA Pac-Man game (https://github.com/HussainAther/dnapacman)  to represent how language models (using Hidden Markov Models)
 + Communicate how language models work using the Pac-Man analogy. The next token/letter you eat is the next letter in the sequence of generating a sequence of protein amino acids. 
 + Essentially, if we organize regions of the Pac-Man board representing different hidden states in a Markov Model, then the next letter that Pac-Man eats can represent the next state an HMM selects. We can change the probabilities a certain letter may appear and, when Pac-Man enters the hidden state, then the probabilities would change. 
 + The issue in language models is that the probabilities of which token you eat next depends on what has already happened. 
