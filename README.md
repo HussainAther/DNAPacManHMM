@@ -1,6 +1,6 @@
 # DNAPacManHMM
 
-![DNA Pac-Man board](img/dnapacmanboard.jpg)
+![DNA Pac-Man board](img/dnapacmanboard.png)
 
 The DNA Pac-Man game (https://github.com/HussainAther/dnapacman) can represent how language models (using Hidden Markov Models) work.
 + We can communicate how language models work using the Pac-Man analogy. The next token/letter you eat is the next letter in the sequence of generating a sequence of protein amino acids. 
