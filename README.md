@@ -1,4 +1,4 @@
-# Explaining how Hidden Markov Models work using Pac-Man!
+# Explaining how Hidden Markov Models can predict protein structure work using Pac-Man!
 
 ![DNA Pac-Man board](img/dnapacmanboard.png)
 
