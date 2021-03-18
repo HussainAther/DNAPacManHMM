@@ -9,7 +9,7 @@ The DNA Pac-Man game (https://github.com/HussainAther/dnapacman) can represent h
 + We can use ghosts to represent how you can dissuade the player from choosing certain outcomes over others.
 + See how the probability for different states changes as people play based on which letter they choose next. 
 
-Compare the HMM of Pac-Man to the HMMs in modeling eukaryotic genes: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2766791/
+We can compare the HMM of Pac-Man to the HMMs in modeling eukaryotic genes following the methods of this manuscript "Hidden Markov Models and their Applications in Biological Sequence Analysis": https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2766791/
 
 ## What are HMMs?
 
