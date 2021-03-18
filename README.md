@@ -1,4 +1,4 @@
-# DNAPacManHMM
+# Explaining how Hidden Markov Models work using Pac-Man!
 
 ![DNA Pac-Man board](img/dnapacmanboard.png)
 
@@ -20,25 +20,11 @@ For protein structure prediction, states have been chosen to represent either ho
 
 ## Ok, but what the hell does Pac-Man have to do with this?
 
-Ahh, good question! When playing the DNA Pac-Man game, we need to eat RNA bases to create strings of amino acids and proteins in the dark, scary maze of the Pac-Man board while avoiding the ghosts. But, when playing DNA Pac-Man, you can't just choose which RNA bases to eat willy-nilly. You're constrained or confined to the few bases you have that are open to you at any given moment. This creates a similar constraint or set of options that an HMM would have in figuring out which state the Pac-Man must choose to create a protein sequence.  
+Ahh, good question! When playing the DNA Pac-Man game, we need to eat RNA bases to create strings of amino acids and proteins in the dark, scary maze of the Pac-Man board while avoiding the ghosts. But, when playing DNA Pac-Man, you can't just choose which RNA bases to eat willy-nilly. You're constrained or confined to the few bases you have that are open to you at any given moment. This creates a similar constraint or set of options that an HMM would have in figuring out which state the Pac-Man must choose to create a protein sequence. The hidden states of each  a symbol representing an elementary unit of the modelled data, for example, in case of a protein sequence, an amino acid.  
 
-There are three types of HMMs that could fit in representing DNA Pac-Man:  
-* Profile-HMMs
-* Pair-HMMs
-* Context-sensitive HMMs
+If we have a multiple sequence alignment of proteins or DNA sequences of the same family, we can build an HMM to represent the common patterns, motifs, and other statistical properties of the given alignment using a profile hidden Markov model (profile-HMM) of the multiple sequence alignment. These use a left-to-right structure without cycles with three types of hidden states (match states Mk, insert states Ik, and delete states Dk) for position-specific symbol frequencies, symbol insertions, and symbol deletions, respectively. 
 
-## Profile-HMMs
-
-
-
-Let us assume that we have a multiple sequence alignment of proteins or DNA sequences that belong to the same functional family. How can we build an HMM that can effectively represent the common patterns, motifs, and other statistical properties in the given alignment? One model that is especially useful for representing the profile of a multiple sequence alignment is the profile hidden Markov model (profile-HMM). Profile-HMMs are HMMs with a specific architecture that is suitable for modeling sequence profiles. Unlike general HMMs, profile-HMMs have a strictly linear left-to-right structure that does not contain any cycles. A profile-HMM repetitively uses three types of hidden states, namely, match states Mk, insert states Ik, and delete states Dk, to describe position-specific symbol frequencies, symbol insertions, and symbol deletions, respectively.
-
-
-## Pair-HMMs
-
-## Context-sensitive HMMs
-
-## 
+In the context of DNA Pac-Man, one may mod the game to randomly introduce insertions or deletions as the game goes on to account for these kinds of states. The corresponding frequencies can then be studied. 
 
 ## Post-project
 
