@@ -318,6 +318,8 @@ def readCommand( argv ):
                       metavar="TYPE", default="KeyboardAgent")
     parser.add_option("-d", "--depth", dest="depth", type="int",
                       help=default("the search DEPTH passed to the agent"), metavar="DEPTH", default=2)
+    parser.add_option("--CG", action="store_true", dest="CGIslandOn",
+                      help="Toggle the CG Island on", default=False)
     parser.add_option("-t", "--textGraphics", action="store_true", dest="textGraphics", 
                       help="Display output as text only", default=False)
     parser.add_option("-q", "--quietTextGraphics", action="store_true", dest="quietGraphics", 
@@ -350,7 +352,7 @@ def readCommand( argv ):
     import layout
     args["layout"] = layout.getLayout( options.layout )
     if args["layout"] == None: raise BaseException("The layout " + options.layout + " cannot be found")
-    
+
     # Choose a pacman agent
     noKeyboard = options.gameToReplay == None and (options.textGraphics or options.quietGraphics)
     pacmanType = loadAgent(options.pacman, noKeyboard)
@@ -380,8 +382,12 @@ def readCommand( argv ):
         textDisplay.SLEEP_TIME = options.delay
         args["display"] = textDisplay.PacmanGraphics()      
     else:
-        import graphicsDisplay
-        args["display"] = graphicsDisplay.PacmanGraphics(options.zoom)
+        if options.CGIslandOn: 
+            import graphicsDisplaycg
+            args["display"] = graphicsDisplaycg.PacmanGraphics(options.zoom)
+        else:
+            import graphicsDisplay
+            args["display"] = graphicsDisplay.PacmanGraphics(options.zoom)
     args["numGames"] = options.numGames
     args["record"] = options.record
     
@@ -410,9 +416,9 @@ def loadAgent(pacman, nographics):
             return getattr(module, pacman)
     raise BaseException("The agent " + pacman + " is not specified in any *Agents.py.")
 
-def replayGame( layout, agents, actions, display ):
+def replayGame( layout, agents, actions, display):
     rules = ClassicGameRules()
-    game = rules.newGame( layout, agents[0], agents[1:], display )   
+    game = rules.newGame( layout, agents[0], agents[1:], display)   
     state = game.state
     display.initialize(state.data)
     
@@ -427,7 +433,7 @@ def replayGame( layout, agents, actions, display ):
     display.finish()
 
 
-def runGames( layout, pacman, ghosts, display, numGames, record ):
+def runGames( layout, pacman, ghosts, display, numGames, record):
     import __main__
     __main__.__dict__["_display"] = display
   
@@ -435,7 +441,7 @@ def runGames( layout, pacman, ghosts, display, numGames, record ):
     games = []
   
     for i in range( numGames ):
-        game = rules.newGame( layout, pacman, ghosts, display )              
+        game = rules.newGame( layout, pacman, ghosts, display ) 
         game.run()
         games.append(game)
         if record:

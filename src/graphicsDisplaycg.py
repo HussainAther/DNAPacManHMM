@@ -97,14 +97,14 @@ basepdictcg = {
     "A" : {"A" : .180, "C" : .274, "G" : .426, "U" : .120},
     "C" : {"A" : .17, "C" : .368, "G" : .274, "U" : .188},
     "G" : {"A" : .161, "C" : .339, "G" : .375, "U" : .125},
-    "U" : {"A" : .079, "C" : .355, "G" : .384, "U" : .182}
+    "U" : {"U" : .079, "C" : .355, "G" : .384, "U" : .182}
 } 
 
 basepdict = {
     "A" : {"A" : .300, "C" : .205, "G" : .285, "U" : .210},
     "C" : {"A" : .322, "C" : .298, "G" : .078, "U" : .302},
     "G" : {"A" : .248, "C" : .246, "G" : .298, "U" : .208},
-    "U" : {"A" : .177, "C" : .239, "G" : .292, "U" : .292}
+    "U" : {"U" : .177, "C" : .239, "G" : .292, "U" : .292}
 } 
 
 def weighted_random_by_dct(dct):
@@ -533,7 +533,7 @@ class PacmanGraphics:
             for yNum, cell in enumerate(x):
                 if cell: # There's food here
                     screen = self.to_screen((xNum-.25, yNum+.4 ))
-                    a = weighted_random_by_dct(basepdict[prevletter])
+                    a = weighted_random_by_dct(basepdictcg[prevletter])
                     b = COLOR_BANK[a]
                     dot = text( screen,
                             color = b,
