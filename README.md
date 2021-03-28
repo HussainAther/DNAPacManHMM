@@ -62,7 +62,7 @@ or:
 ## Options:
     Use "python pacman.py --help for full options"
 
-    --CG CG Island Mode: Turn this on to turn the board into a CG Island.
+    --CG  CG Island Mode: Turn this on to turn the board into a CG Island.
 
     -g	Ghost Mode: Can be set to “RandomGhost” (ghosts move randomly) or “DirectionalGhost” (ghosts chase you)
 
