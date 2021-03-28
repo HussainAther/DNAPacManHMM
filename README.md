@@ -35,7 +35,7 @@ Basically, these two charts tell you the probability of moving from one letter t
 
 As shown in red, there's a slim probability of moving from C to G when not in a CG island. Because this is a Markov Model, the next state only depends on the previous state. The letters themselves can be arranged on the Pac-Man board with these probabilities to simulate what protein creation looks like in the presence of CG islands.
 
-Just use the `--CG` option when starting the game to do so.
+Just use the `--CG` option when starting the game to start the game with a board created as though Pac-Man were on a CG site.
 
 ## How else can Pac-Man be used to study HMMs?
 
